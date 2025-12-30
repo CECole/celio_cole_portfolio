@@ -4,6 +4,7 @@
 <p align="center">
 A portfolio web app shows my mini projects
 </p>
+
 View online [Link](https://tai.vnpsc.com).
 
 ![Tai Le's Portfolio](fe/public/images/gallery/project-06.png)
@@ -72,4 +73,4 @@ Update
 ## Special Thanks
 
 > - Developers : Me (Tai Le)
-> - Source code: [Lorant One's Magic Portfolio](https://github.com/once-ui-system/magic-portfolio)
+> - Foundation source code : [Lorant One's Magic Portfolio](https://github.com/once-ui-system/magic-portfolio)
