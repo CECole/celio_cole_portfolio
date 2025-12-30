@@ -1,10 +1,25 @@
-# Tai Le's Portfolio
+<h1 align="center">
+    Tai Le's Portfolio
+</h1>
+<p align="center">
+A portfolio web app shows my mini projects
+</p>
+View online [Link](https://tai.vnpsc.com).
 
-View the demo [here](https://tai.vnpsc.com).
+![Tai Le's Portfolio](fe/public/images/gallery/project-06.png)
 
-![Magic Portfolio](fe/public/images/gallery/project-06.png)
+## Table of Contents
 
-## Getting started
+- [Features](#features)
+- [Required](#required)
+- [Installation](#installation)
+
+## Required
+
+- Next.js v15
+- Node.js v18.17+
+
+## Installation
 
 **1. Clone the repository**
 
@@ -18,22 +33,22 @@ git clone https://github.com/astropop/my-magic-portfolio.git
 npm install
 ```
 
-**3. Run dev server**
-
-```
-npm run dev
-```
-
-**4. Edit config**
+**3. Edit config**
 
 ```
 src/resources/once-ui.config.js
 ```
 
-**5. Edit content**
+**4. Edit content**
 
 ```
 src/resources/content.js
+```
+
+**5. Run dev server**
+
+```
+npm run dev
 ```
 
 **6. Create blog posts / projects**
@@ -42,25 +57,7 @@ src/resources/content.js
 Add a new .mdx file to src/app/blog/posts or src/app/work/projects
 ```
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+## Special Thanks
 
-## Documentation
-
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
-
-## Creators
-
-Modifier:
-Tai Le: [LinkedIn](https://www.linkedin.com/in/tailt0/)
-
-Based source code:
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
-
-## License
-
-Distributed under the CC BY-NC 4.0 License.
-
-- Attribution is required.
-- Commercial usage is not allowed.
-
-See `LICENSE.txt` for more information.
+> - Developers : Me (Tai Le)
+> - Source code: [Lorant One's Magic Portfolio](https://github.com/once-ui-system/magic-portfolio)

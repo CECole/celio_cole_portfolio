@@ -27,12 +27,6 @@ jobs:
           script: |
             set -e
 
-            docker container stop my-magic-portfolio || true
-
-            docker container remove my-magic-portfolio || true
-
-            docker image remove magic-portfolio/my-magic-portfolio:latest || true
-
             cd ${{ secrets.ONLINE_PATH_PROJECT }} 
 
             if [ -d my-magic-portfolio ]; then
@@ -47,4 +41,5 @@ jobs:
             cd fe
 
             docker compose build
-            docker compose up -d
+            docker compose up -d --remove-orphans
+            docker image prune -f
