@@ -14,7 +14,7 @@ const person: Person = {
   firstName: "Tai Tuan",
   lastName: "Le",
   name: `Tai Tuan Le`,
-  role: "Software Engineer | Developer Programmer | Web Developer | Java Developer",
+  role: "Software Engineer | Web Developer | Java Developer",
   avatar: "/images/avatar.png",
   email: "letuantai241@gmail.com",
   location: "Australia/Adelaide", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -31,25 +31,25 @@ const social: Social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: "https://www.linkedin.com/in/tailt0",
+  },
+  {
     name: "GitHub",
     icon: "github",
     link: "https://github.com/astropop/",
   },
   {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/in/tailt0",
+    name: "Email",
+    icon: "email",
+    link: `mailto:${person.email}`,
   },
   // {
   //   name: "Threads",
   //   icon: "threads",
   //   link: "https://www.threads.com/@once_ui",
   // },
-  {
-    name: "Email",
-    icon: "email",
-    link: `mailto:${person.email}`,
-  },
 ];
 
 const home: Home = {
@@ -74,12 +74,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I’m Tai Tuan Le, a software engineer with 9+ years of experience <br />
-      in Java, React.JS, Next.JS, web apps and full-stack development.
-      <br />
-      Passionate about turning code into colorful life, <br />I enjoy creating
-      projects that bring ideas to life. <br />
-      Welcome to my portfolio.
+      Hi, I’m Tai Tuan Le. I'm a Software Engineer and a Web Developer. <br />
+      Specializing in building websites, applications and passionate about
+      sharing my knowledge about programming, technology.
     </>
   ),
 };
@@ -90,7 +87,7 @@ const about: About = {
   title: `About – ${person.name}`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
-    display: true,
+    display: false,
     subItems: false,
   },
   avatar: {
@@ -105,13 +102,100 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Tai is a software engineer with a passion for transforming complex
-        challenges into simple, elegant design solutions. With 9+ years of
-        software engineering experience, specialising in Java, web applications,
-        and full-stack development, I have an interest in turning code into
-        colorful life.
+        My name is Tai, I am a software engineer with a passion for transforming
+        complex challenges into simple, elegant design solutions. With 9+ years
+        of software engineering experience, specialising in web applications,
+        and full-stack development. I have an interest in turning code into
+        colorful life and also share my experiences about programming,
+        technology to everybody.
       </>
     ),
+  },
+  studies: {
+    display: true, // set to false to hide this section
+    title: "Studies",
+    institutions: [
+      {
+        name: "Flinders University",
+        description: <>Master of Information Technology</>,
+        timeframe: "March 2025 – Current",
+      },
+      {
+        name: "Military Technical Academy, Vietnam",
+        description: <>Bachelor of Information Technology</>,
+        timeframe: "2011 – 2017",
+      },
+      {
+        name: "Hanoi APTECH, Vietnam",
+        description: <>APTECH CERTIFIED COMPUTER PROFESSIONAL (ACCP)</>,
+        timeframe: "2011 - 2014",
+      },
+    ],
+  },
+  technical: {
+    display: true, // set to false to hide this section
+    title: "Technical skills",
+    skills: [
+      {
+        title: "React.js, Next.js",
+        description: <>Front-End skills</>,
+        tags: [
+          {
+            name: "JavaScript",
+            icon: "javascript",
+          },
+          {
+            name: "Next.js",
+            icon: "nextjs",
+          },
+          {
+            name: "CSS",
+            icon: "css",
+          },
+          {
+            name: "HTML",
+            icon: "html",
+          },
+          {
+            name: "Javascript",
+            icon: "javascript",
+          },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      },
+      {
+        title: "Java, SQL, PostgreSQL, Oracle",
+        description: <>Back-End and Database Management Skills</>,
+        tags: [
+          {
+            name: "Java",
+            icon: "java",
+          },
+          {
+            name: "MySQL",
+            icon: "sql",
+          },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      },
+      {
+        title: "Next.js, Springboot, Liferay",
+        description: <>Frameworks & Platforms</>,
+        tags: [],
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      },
+      {
+        title:
+          "Docker, Figma, PerfectPixel, Github, SVN, Jira, Confluence, Redmine, RestfulAPI, Jasper Reports,...",
+        description: <>Programming Tools, Other tools and technologies</>,
+        tags: [],
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      },
+    ],
   },
   work: {
     display: true, // set to false to hide this section
@@ -123,22 +207,22 @@ const about: About = {
         role: "Front-end Team Leader | Web Developer | Software Engineer",
         achievements: [
           <>
-            Developed 5 screens for each system, including one screen rated as
-            the project’s most challenging.
-          </>,
-          <>
-            Mentored two 5-member teams, with 5 members becoming future leaders
-            and others key members of other teams.
-          </>,
-          <>
-            Built a process with over 10,000 lines of code to import large
-            datasets into a database using Seasar2 Framework based on Java
-            Struts 2.
+            Made a batch with over 10,000 lines of code to import large datasets
+            into a database using Seasar2 Framework based on Java Struts 2.
           </>,
           <>
             Delivered successfully a custom SSO login system for client
             registration and login for Japanese customer systems.
           </>,
+          <>
+            Developed many screens for customer, including one screen rated as
+            the project’s most challenging.
+          </>,
+          <>
+            Mentored a lot of members, with 5 members becoming future leaders
+            and others key members of other teams.
+          </>,
+
           <>Got a Valuable Person Award in 2023.</>,
           <>Promoted to sub-leader in 2021, leader in 2022.</>,
           <>
@@ -253,131 +337,6 @@ const about: About = {
           </>,
         ],
         images: [],
-      },
-    ],
-  },
-  studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
-    institutions: [
-      {
-        name: "Flinders University",
-        description: <>Master of Information Technology</>,
-      },
-      {
-        name: "Military Technical Academy, Vietnam",
-        description: <>Bachelor of Information Technology</>,
-      },
-      {
-        name: "Hanoi APTECH, Vietnam",
-        description: <>APTECH CERTIFIED COMPUTER PROFESSIONAL (ACCP)</>,
-      },
-    ],
-  },
-  technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
-    skills: [
-      {
-        title: "Next.js, Restful API, HTML, CSS, JS",
-        description: <>Building next gen apps with Next.js.</>,
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/project-05.png",
-            alt: "List meeting room image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Java, SQL, HTML, CSS, JS",
-        description: <>Able to develop in Java proficiently.</>,
-        tags: [
-          {
-            name: "Java",
-            icon: "java",
-          },
-          {
-            name: "MySQL",
-            icon: "sql",
-          },
-          {
-            name: "MySQL",
-            icon: "sql",
-          },
-          {
-            name: "CSS",
-            icon: "css",
-          },
-          {
-            name: "HTML",
-            icon: "html",
-          },
-          {
-            name: "Javascript",
-            icon: "javascript",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/project-01.png",
-            alt: "Graduation Project's Home Page",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/project-02.png",
-            alt: "Graduation Project's Admin Page",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Java, SQL, Java Swing",
-        description: <>A desktop application made by Java.</>,
-        tags: [
-          {
-            name: "Java",
-            icon: "java",
-          },
-          {
-            name: "MySQL",
-            icon: "sql",
-          },
-          {
-            name: "MySQL",
-            icon: "sql",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/project-03.png",
-            alt: "Crosswords 1",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/project-04.png",
-            alt: "Crosswords Admin Page",
-            width: 16,
-            height: 9,
-          },
-        ],
       },
     ],
   },
