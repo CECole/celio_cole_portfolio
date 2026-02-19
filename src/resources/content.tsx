@@ -4,9 +4,9 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Adetayo",
   lastName: "Adebayo",
-  name: `Adetayo Adebayo`,
+  name: "Adetayo Adebayo",
   role: "Platform Engineer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/me.jpg",
   email: "adetayoadebayo67@gmail.com",
   location: "Europe/London", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Yoruba"], // optional: Leave the array empty if you don't want to display languages
@@ -26,11 +26,13 @@ const social: Social = [
     name: "GitHub",
     icon: "github",
     link: "https://github.com/phos-x",
+    link: "https://github.com/phos-x",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
+    link: "https://www.linkedin.com/in/aadetayo",
     link: "https://www.linkedin.com/in/aadetayo",
     essential: true,
   },
@@ -38,12 +40,13 @@ const social: Social = [
     name: "Instagram",
     icon: "instagram",
     link: "https://www.instagram.com/phos_x/",
+    link: "https://www.instagram.com/phos_x/",
     essential: false,
   },
   {
     name: "Threads",
     icon: "threads",
-    link: "https://www.threads.com/@phos_x",
+    link: "https://www.threads.com/@phos-x",
     essential: true,
   },
   {
@@ -76,7 +79,7 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Adetayo, a Platform engineer at <Text as="span" size="xl" weight="strong">Asaphic</Text>, where I craft automated <br /> development processes. After hours, I build my own projects.
+    I'm Adetayo, an MLOps Engineer at <Text as="span" size="xl" weight="strong">Asaphic</Text>, where I craft intuitive <br /> data platforms. After hours, I build my own projects.
 </>
   ),
 };
@@ -102,8 +105,11 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Adetayo is a Glasgow-based platform engineer with a passion for transforming complex challenges
-        into simple, elegant pipeline processes. His work spans cloud infrastructure engineering, MLOps, and Platform Engineering.
+        Adetayo is a Glasgow-based Platform Engineer dedicated to transforming 
+        complex infrastructure bottlenecks into scalable, automated, and elegant 
+        developer experiences. My expertise lies in architecting resilient 
+        cloud systems, streamlining CI/CD pipelines, and bridging the gap 
+        between robust engineering and seamless developer self-service.
       </>
     ),
   },
@@ -112,9 +118,9 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Zone Payment Network",
+        timeframe: "2021 - 2025",
+        role: "DevOps Specialist",
         achievements: [
           <>
             Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
