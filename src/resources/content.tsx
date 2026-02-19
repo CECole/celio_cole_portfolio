@@ -26,21 +26,18 @@ const social: Social = [
     name: "GitHub",
     icon: "github",
     link: "https://github.com/phos-x",
-    link: "https://github.com/phos-x",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
     link: "https://www.linkedin.com/in/aadetayo",
-    link: "https://www.linkedin.com/in/aadetayo",
     essential: true,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/phos_x/",
-    link: "https://www.instagram.com/phos_x/",
+    link: "https://www.instagram.com/__phos_x/",
     essential: false,
   },
   {
