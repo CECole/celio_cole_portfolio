@@ -161,12 +161,12 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "University of The West Of Scotland",
+        description: <>Studied Information Technology with Data Analytics.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Lagos State University",
+        description: <>Studied Computer science.</>,
       },
     ],
   },
