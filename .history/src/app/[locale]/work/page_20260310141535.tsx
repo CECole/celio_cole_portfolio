@@ -78,7 +78,7 @@ export default function Work(
                     }),
                 }}
             />
-            <Projects projects={allProjects} locale={locale}/>
+            <Projects locale={locale}/>
         </Flex>
     );
 }

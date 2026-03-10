@@ -1,6 +1,5 @@
 {
-	"name": "ximing-wang-portfolio",
-	"description": "Master's student in Cartography @ TUM | GIS & Data Analysis Portfolio",
+	"name": "@once-ui-system/magic-portfolio",
 	"version": "0.2.0",
 	"scripts": {
 		"dev": "next dev",

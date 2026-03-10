@@ -12,7 +12,7 @@ const createI18nContent = (t) => {
         role: isZh ? '慕尼黑工业大学 制图学硕士在读' : 'Student in Cartography M.Sc.',
         avatar: '/images/avatar.jpg',
         location: 'Europe/Berlin',
-        languages: isZh ? ['英语', '中文'] : ['English', 'Chinese']
+        languages: ['English', '中文']
     }
 
     const newsletter = {

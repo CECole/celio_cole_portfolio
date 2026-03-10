@@ -90,7 +90,7 @@ export const Header = () => {
                     textVariant="body-default-s">
                     { display.location && (
                         <Flex hide="s">
-                            {t(person.location)}
+                            t({person.location})
                         </Flex>
                     )}
                 </Flex>

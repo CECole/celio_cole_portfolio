@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { getPosts } from '@/app/utils/utils';
-
 import { Heading, Flex, Text, Button,  Avatar, RevealFx, Arrow } from '@/once-ui/components';
 import { Projects } from '@/components/work/Projects';
 
@@ -48,7 +46,6 @@ export default function Home(
 	{ params: {locale}}: { params: { locale: string }}
 ) {
 	unstable_setRequestLocale(locale);
-	const allProjects = getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]);
 	const t = useTranslations();
 	const { home, about, person, newsletter } = renderContent(t);
 	return (
@@ -128,7 +125,7 @@ export default function Home(
 				
 			</Flex>
 			<RevealFx translateY="16" delay={0.6}>
-				<Projects projects={allProjects} range={[1,1]} locale={locale}/>
+				<Projects range={[1,1]} locale={locale}/>
 			</RevealFx>
 			{routes['/blog'] && (
 				<Flex
@@ -148,7 +145,7 @@ export default function Home(
 					</Flex>
 				</Flex>
 			)}
-			<Projects projects={allProjects} range={[2]} locale={locale}/>
+			<Projects range={[2]} locale={locale}/>
 			{ newsletter.display &&
 				<Mailchimp newsletter={newsletter} />
 			}

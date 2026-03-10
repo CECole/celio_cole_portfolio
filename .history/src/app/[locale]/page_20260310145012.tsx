@@ -128,7 +128,7 @@ export default function Home(
 				
 			</Flex>
 			<RevealFx translateY="16" delay={0.6}>
-				<Projects projects={allProjects} range={[1,1]} locale={locale}/>
+				<Projects range={[1,1]} locale={locale}/>
 			</RevealFx>
 			{routes['/blog'] && (
 				<Flex
@@ -148,7 +148,7 @@ export default function Home(
 					</Flex>
 				</Flex>
 			)}
-			<Projects projects={allProjects} range={[2]} locale={locale}/>
+			<Projects range={[2]} locale={locale}/>
 			{ newsletter.display &&
 				<Mailchimp newsletter={newsletter} />
 			}

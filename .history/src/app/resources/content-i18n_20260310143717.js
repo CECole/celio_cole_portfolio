@@ -11,8 +11,8 @@ const createI18nContent = (t) => {
         },
         role: isZh ? '慕尼黑工业大学 制图学硕士在读' : 'Student in Cartography M.Sc.',
         avatar: '/images/avatar.jpg',
-        location: 'Europe/Berlin',
-        languages: isZh ? ['英语', '中文'] : ['English', 'Chinese']
+        location: isZh ? '欧洲/柏林' : 'Europe/Berlin',
+        languages: ['English', '中文']
     }
 
     const newsletter = {
@@ -65,7 +65,7 @@ const createI18nContent = (t) => {
             description: (
                 <p style={{ lineHeight: '1.75', fontSize: '1.15rem' }}>
                     {isZh
-                        ? '我是王晰明，慕尼黑工业大学 (TUM) Erasmus+ 制图学专业的硕士研究生。我专注于 GIS、空间数据分析，致力于将复杂的地理空间数据转化为富有洞察力的地图设计。目前，我正在积极寻找空间数据科学领域的博士机会及相关挑战性职位。'
+                        ? '我是王晰明，慕尼黑工业大学 (TUM) Erasmus+ 制图学项目的硕士研究生。我专注于 GIS、空间数据分析，致力于将复杂的地理空间数据转化为富有洞察力的地图设计。目前，我正在积极寻找空间数据科学领域的博士机会及相关挑战性职位。'
                         : "I'm Ximing, a Master's student in the Erasmus+ Cartography program at TUM. I specialize in GIS, spatial data analysis, and transforming complex geospatial data into insightful map designs. Currently seeking PhD opportunities and challenging roles in geospatial data science."}
                 </p>
             )

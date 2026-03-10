@@ -1,12 +1,12 @@
-"use client"; // 声明为客户端组件
+"use client"; // 👈 1. 声明为客户端组件
 
 import { Flex, Tag, Text, RevealFx } from '@/once-ui/components'; // 删掉了 getPosts，加上了交互需要的组件
 import { ProjectCard } from '@/components';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react'; // 引入状态管理
+import { useState } from 'react'; // 👈 2. 引入状态管理
 
 interface ProjectsProps {
-    projects: any[];
+    projects: any[]; // 👈 3. 接收父组件传来的数据
     range?: [number, number?];
     locale: string;
 }
@@ -14,18 +14,18 @@ interface ProjectsProps {
 export function Projects({ projects, range, locale }: ProjectsProps) {
     const t = useTranslations();
 
-    // 记录当前选中了哪些标签
+    // 🪄 状态魔法：记录当前选中了哪些标签
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-    // 排序项目
+    // 1. 排序项目 (使用传进来的 projects)
     const sortedProjects = [...projects].sort((a, b) => {
         return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
     });
 
-    // 自动提取所有独一无二的标签
+    // 2. 自动提取所有独一无二的标签 (用于生成筛选按钮)
     const allTags = Array.from(new Set(sortedProjects.map(p => p.metadata.tag).filter(Boolean)));
 
-    // 点击标签的交互逻辑
+    // 3. 点击标签的交互逻辑
     const toggleTag = (tag: string) => {
         setSelectedTags(prev => 
             prev.includes(tag) 
@@ -34,12 +34,12 @@ export function Projects({ projects, range, locale }: ProjectsProps) {
         );
     };
 
-    // 根据选中的标签过滤项目
+    // 4. 根据选中的标签过滤项目
     const filteredProjects = selectedTags.length > 0
         ? sortedProjects.filter(post => selectedTags.includes(post.metadata.tag))
         : sortedProjects;
 
-    // 分页处理
+    // 5. 分页处理
     const displayedProjects = range
         ? filteredProjects.slice(range[0] - 1, range[1] ?? filteredProjects.length)
         : filteredProjects;
@@ -49,10 +49,10 @@ export function Projects({ projects, range, locale }: ProjectsProps) {
             fillWidth paddingX="l"
             direction="column">
             
-            {/* 筛选器区域 */}
+            {/* 🏷️ 筛选器 UI 区域 */}
             {allTags.length > 0 && (
-                <Flex gap="12" wrap marginLeft='24' marginBottom="48" alignItems="center">
-                    <Text variant="body-default-m" onBackground="neutral-weak">
+                <Flex gap="12" wrap marginBottom="48" alignItems="center">
+                    <Text variant="body-default-s" onBackground="neutral-weak">
                         {locale === 'zh' ? '筛选项目：' : 'Filter by:'}
                     </Text>
                     
@@ -66,9 +66,9 @@ export function Projects({ projects, range, locale }: ProjectsProps) {
                                     cursor: 'pointer', 
                                     transition: 'all 0.2s ease',
                                     transform: isSelected ? 'scale(1.05)' : 'scale(1)',
-                                    opacity: selectedTags.length === 0 || isSelected ? 1 : 0.8 // 没选中的稍微变暗，更凸显重点
+                                    opacity: selectedTags.length === 0 || isSelected ? 1 : 0.6 // 没选中的稍微变暗，更凸显重点
                                 }}>
-                                <Tag variant={isSelected ? "info" : "neutral"} size="l">
+                                <Tag variant={isSelected ? "info" : "neutral"} size="m">
                                     {t(`tags.${tag}`)}
                                 </Tag>
                             </div>
@@ -86,7 +86,7 @@ export function Projects({ projects, range, locale }: ProjectsProps) {
                 </Flex>
             )}
 
-            {/* 时间轴和卡片区域 */}
+            {/* 🗂️ 你的绝美时间轴和卡片区域 */}
             {displayedProjects.map((post, index) => (
                 <RevealFx key={post.slug} translateY="48" delay={0.1}>
                     

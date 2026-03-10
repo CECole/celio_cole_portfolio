@@ -3,7 +3,7 @@
     "Header": {
         "home": "Home",
         "about": "About",
-        "work": "Projects",
+        "work": "Work",
         "blog": "Blog",
         "gallery": "Gallery"
     },
@@ -74,7 +74,7 @@
         "description": "Read what {name} has been up to recently"
     },
     "work": {
-        "label": "Projects",
+        "label": "Work",
         "title": "My projects",
         "description": "Design and dev projects by {name}"
     },
@@ -96,6 +96,6 @@
         "ui-ux": "UI/UX Design",
         "gis": "GIS"
     },
-    "Europe/Berlin": "Europe/Berlin",
-    "Asia/Shanghai": "Asia/Shanghai"
+    "Europe/Berlin": "Europe / Berlin",
+    "Asia/Shanghai": "Asia / Shanghai"
 }

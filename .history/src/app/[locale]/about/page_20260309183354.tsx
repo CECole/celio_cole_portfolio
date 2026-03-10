@@ -125,7 +125,7 @@ export default function About(
                             <Icon
                                 onBackground="accent-weak"
                                 name="globe" />
-                            {t(person.location)}
+                            {person.location}
                         </Flex>
                         {person.languages.length > 0 && (
                             <Flex

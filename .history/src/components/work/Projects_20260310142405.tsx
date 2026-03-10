@@ -49,10 +49,10 @@ export function Projects({ projects, range, locale }: ProjectsProps) {
             fillWidth paddingX="l"
             direction="column">
             
-            {/* 筛选器区域 */}
+            {/* 筛选器 UI 区域 */}
             {allTags.length > 0 && (
-                <Flex gap="12" wrap marginLeft='24' marginBottom="48" alignItems="center">
-                    <Text variant="body-default-m" onBackground="neutral-weak">
+                <Flex gap="12" wrap marginBottom="48" alignItems="center">
+                    <Text variant="body-default-s" onBackground="neutral-weak">
                         {locale === 'zh' ? '筛选项目：' : 'Filter by:'}
                     </Text>
                     
@@ -66,7 +66,7 @@ export function Projects({ projects, range, locale }: ProjectsProps) {
                                     cursor: 'pointer', 
                                     transition: 'all 0.2s ease',
                                     transform: isSelected ? 'scale(1.05)' : 'scale(1)',
-                                    opacity: selectedTags.length === 0 || isSelected ? 1 : 0.8 // 没选中的稍微变暗，更凸显重点
+                                    opacity: selectedTags.length === 0 || isSelected ? 1 : 0.6 // 没选中的稍微变暗，更凸显重点
                                 }}>
                                 <Tag variant={isSelected ? "info" : "neutral"} size="l">
                                     {t(`tags.${tag}`)}

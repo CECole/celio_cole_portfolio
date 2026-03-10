@@ -84,16 +84,16 @@ export const Header = () => {
                 zIndex={9}
                 fillWidth padding="8"
                 justifyContent="center">
-                <Flex
-                    paddingLeft="12" fillWidth
-                    alignItems="center"
-                    textVariant="body-default-s">
-                    { display.location && (
-                        <Flex hide="s">
-                            {t(person.location)}
+                <Flex hide="s" gap="12" alignItems="center" onBackground="neutral-weak">
+                            {/* 📍 搬过来的时区 */}
+                            { display.location && (
+                                <span>{person.location}</span>
+                            )}
+                            {/* ⏱️ 原来的时间 */}
+                            { display.time && (
+                                <TimeDisplay timeZone={person.location}/>
+                            )}
                         </Flex>
-                    )}
-                </Flex>
                 <Flex fillWidth justifyContent="center">
                     <Flex
                         background="surface" border="neutral-medium" borderStyle="solid-1" radius="m-4" shadow="l"

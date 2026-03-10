@@ -22,7 +22,7 @@
   },
   "work": {
     "label": "项目展示",
-    "title": "我的项目",
+    "title": "我的项目大厅",
     "description": "空间数据与设计项目"
   },
   "gallery": {
@@ -42,7 +42,5 @@
     "algorithm": "算法研究",
     "ui-ux": "UI/UX 设计",
     "gis": "地理信息系统"
-  },
-  "Europe/Berlin": "欧洲 / 柏林",
-  "Asia/Shanghai": "中国 / 上海"
+  }
 }

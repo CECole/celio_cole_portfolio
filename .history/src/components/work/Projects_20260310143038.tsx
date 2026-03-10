@@ -66,7 +66,7 @@ export function Projects({ projects, range, locale }: ProjectsProps) {
                                     cursor: 'pointer', 
                                     transition: 'all 0.2s ease',
                                     transform: isSelected ? 'scale(1.05)' : 'scale(1)',
-                                    opacity: selectedTags.length === 0 || isSelected ? 1 : 0.8 // 没选中的稍微变暗，更凸显重点
+                                    opacity: selectedTags.length === 0 || isSelected ? 1 : 0.6 // 没选中的稍微变暗，更凸显重点
                                 }}>
                                 <Tag variant={isSelected ? "info" : "neutral"} size="l">
                                     {t(`tags.${tag}`)}

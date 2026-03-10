@@ -74,7 +74,7 @@
         "description": "Read what {name} has been up to recently"
     },
     "work": {
-        "label": "Projects",
+        "label": "Work",
         "title": "My projects",
         "description": "Design and dev projects by {name}"
     },
