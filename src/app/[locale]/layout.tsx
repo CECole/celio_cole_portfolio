@@ -7,6 +7,7 @@ import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style } from '@/app/resources'
 
 import { Inter } from 'next/font/google'
+import { Playfair_Display } from 'next/font/google'
 import { Source_Code_Pro } from 'next/font/google';
 
 import { NextIntlClientProvider } from 'next-intl';
@@ -50,9 +51,9 @@ export async function generateMetadata(
 };
 
 const primary = Inter({
-	variable: '--font-primary',
-	subsets: ['latin'],
-	display: 'swap',
+    variable: '--font-primary',
+    subsets: ['latin'],
+    display: 'swap',
 })
 
 type FontConfig = {

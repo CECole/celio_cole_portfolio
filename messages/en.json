@@ -1,4 +1,12 @@
 {
+    "locale": "en",
+    "Header": {
+        "home": "Home",
+        "about": "About",
+        "work": "Work",
+        "blog": "Blog",
+        "gallery": "Gallery"
+    },
     "person": {
         "role": "Design Engineer"
     },
@@ -76,7 +84,16 @@
         "description": "A photo collection by {name}"
     },
     "projectCard": {
-        "label": "Read Case Study",
+        "label": "Know more",
         "link": "Project Link"
-    }
+    },
+    "tags": {
+    "map-visualization": "Map Visualization",
+    "web-dev": "Web Development",
+    "app-dev": "App Development",
+    "data-analysis": "Data Analysis",
+    "algorithm": "Algorithm",
+    "ui-ux": "UI/UX Design",
+    "gis": "GIS"
+  }
 }

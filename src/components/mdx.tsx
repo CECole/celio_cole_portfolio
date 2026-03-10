@@ -7,6 +7,7 @@ import { HeadingLink } from '@/components';
 
 import { TextProps } from '@/once-ui/interfaces';
 import { SmartImageProps } from '@/once-ui/components/SmartImage';
+import ZoomableImage from '@/components/ZoomableImage';
 
 type TableProps = {
     data: {
@@ -113,7 +114,7 @@ function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
 function createParagraph({ children }: TextProps) {
     return (
         <Text style={{lineHeight: '150%'}}
-            variant="body-default-m"
+            variant="body-default-l"
             onBackground="neutral-medium"
             marginTop="8"
             marginBottom="12">
@@ -132,7 +133,15 @@ const components = {
     h6: createHeading(6) as any,
     img: createImage as any,
     a: CustomLink as any,
+    ul: ({ children }: any) => <ul style={{ paddingLeft: '1.5rem', marginBottom: '1rem', listStyleType: 'disc' }}>{children}</ul>,
+    ol: ({ children }: any) => <ol style={{ paddingLeft: '1.5rem', marginBottom: '1rem', listStyleType: 'decimal' }}>{children}</ol>,
+    li: ({ children }: any) => (
+        <Text as="li" variant="body-default-l" onBackground="neutral-medium" marginBottom="8">
+            {children}
+        </Text>
+    ),
     Table,
+    ZoomableImage,
     CodeBlock
 };
 

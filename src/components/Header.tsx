@@ -13,6 +13,7 @@ import { Locale, usePathname, useRouter } from '@/i18n/routing';
 import { renderContent } from "@/app/resources";
 import { useTranslations } from "next-intl";
 import { i18n } from "@/app/resources/config";
+import ThemeToggle from '@/components/ThemeToggle'; 
 
 type TimeDisplayProps = {
     timeZone: string;
@@ -142,6 +143,8 @@ export const Header = () => {
                                 </ToggleButton>
                             )}
                         </Flex>
+                        <div style={{ width: '1px', height: '28px', backgroundColor: 'var(--neutral-alpha-medium)', margin: '0 4px', alignSelf: 'center' }}></div>
+                        <ThemeToggle />
                     </Flex>
                 </Flex>
                 <Flex fillWidth justifyContent="flex-end" alignItems="center">

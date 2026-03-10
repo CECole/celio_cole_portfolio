@@ -1,19 +1,19 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-    firstName: 'Selene',
-    lastName:  'Yu',
+    firstName: 'Ximing',
+    lastName: 'Wang',
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Design Engineer',
-    avatar:    '/images/avatar.jpg',
-    location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+    role: 'Student in Cartography M.Sc.',
+    avatar: '/images/avatar.jpg',
+    location: 'Europe/Berlin',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+    languages: ['English', 'Chinese']  // optional: Leave the array empty if you don't want to display languages
 }
 
 const newsletter = {
-    display: true,
+    display: false,
     title: <>Subscribe to {person.firstName}'s Newsletter</>,
     description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
 }
@@ -21,34 +21,29 @@ const newsletter = {
 const social = [
     // Links are automatically displayed.
     // Import new icons in /once-ui/icons.ts
+    // {
+    //     name: 'GitHub',
+    //     icon: 'github',
+    //     link: 'https://github.com/once-ui-system/nextjs-starter',
+    // },
     {
-        name: 'GitHub',
-        icon: 'github',
-        link: 'https://github.com/once-ui-system/nextjs-starter',
-    },
-    {
-        name: 'LinkedIn',
-        icon: 'linkedin',
-        link: 'https://www.linkedin.com/company/once-ui/',
-    },
-    {
-        name: 'X',
-        icon: 'x',
-        link: '',
+        name: 'Bilibili',
+        icon: 'bilibili',
+        link: 'https://space.bilibili.com/146797437?spm_id_from=333.1007.0.0',
     },
     {
         name: 'Email',
         icon: 'email',
-        link: 'mailto:example@gmail.com',
+        link: 'mailto:simonwangcn@qq.com',
     },
 ]
 
 const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
-    description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Design engineer and builder</>,
-    subline: <>I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive<br/> user experiences. After hours, I build my own projects.</>
+    description: `Portfolio website showcasing my GIS and spatial analysis projects.`,
+    headline: <>Spatial Data Analyst & Cartographer</>,
+    subline: <>I'm Ximing, a Master's student in the Erasmus+ Cartography program at <InlineCode>TUM</InlineCode>. I specialize in GIS, spatial data analysis, and transforming complex geospatial data into insightful map designs. Currently seeking PhD opportunities and challenging roles in geospatial data science.</>
 }
 
 const about = {
@@ -63,16 +58,20 @@ const about = {
         display: true
     },
     calendar: {
-        display: true,
+        display: false,
         link: 'https://cal.com'
     },
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology.</>
+        description: (
+            <p style={{ lineHeight: '1.75', fontSize: '1.15rem'}}>
+                I'm Ximing, a Master's student in the Erasmus+ Cartography program at TUM. I specialize in GIS, spatial data analysis, and transforming complex geospatial data into insightful map designs. Currently seeking PhD opportunities and challenging roles in geospatial data science.
+            </p>
+        )
     },
     work: {
-        display: true, // set to false to hide this section
+        display: false, // set to false to hide this section
         title: 'Work Experience',
         experiences: [
             {
@@ -100,21 +99,99 @@ const about = {
                     <>Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.</>,
                     <>Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.</>
                 ],
-                images: [ ]
+                images: []
             }
         ]
     },
     studies: {
-        display: true, // set to false to hide this section
-        title: 'Studies',
+        display: true,
+        title: 'Education',
         institutions: [
             {
-                name: 'University of Jakarta',
-                description: <>Studied software engineering.</>,
+                name: 'Technical University of Munich & Partner Universities',
+                description: (
+                    <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', marginTop: '12px', marginBottom: '12px' }}>
+
+                        <div style={{
+                            flexShrink: 0,
+                            width: '90px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            gap: '16px'
+                        }}>
+                            <img
+                                src="/images/TUM.svg"
+                                alt="TUM Logo"
+                                style={{ width: '95%', height: 'auto', display: 'block',marginTop: '12px', marginBottom: '12px' }}
+                            />
+                            <img
+                                src="/images/Carto.svg"
+                                alt="Carto Logo"
+                                style={{ width: '55%', height: 'auto', display: 'block' }}
+                            />
+                        </div>
+
+                        <div style={{ flex: 1, paddingTop: '4px'}}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                                <p style={{ fontWeight: '600', margin: '0', fontSize: '1.1rem', color: 'var(--neutral-on-background-strong)' }}>
+                                    Master of Science in Cartography
+                                </p>
+                                <span style={{ fontSize: '1rem', color: 'var(--neutral-on-background-medium)', whiteSpace: 'nowrap', marginLeft: '16px' }}>
+                                    2024 - Present
+                                </span>
+                            </div>
+
+                            <p style={{ margin: '0 12px 16px 0', fontSize: '1rem', opacity: 0.9, lineHeight: '1.5', }}>
+                                A highly competitive Erasmus+ program focusing on spatial data science, web mapping, and geovisualization, jointly hosted by TU Munich, TU Wien, TU Dresden, and University of Twente.
+                            </p>
+
+                            <a
+                                href="https://cartographymaster.eu/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                    textDecoration: 'underline',
+                                    fontWeight: 'bold',
+                                    fontSize: '0.9rem',
+                                    color: 'var(--brand-primary)'
+                                }}
+                            >
+                                🌐 Visit Official Program Website ↗
+                            </a>
+                        </div>
+                    </div>
+                ),
             },
             {
-                name: 'Build the Future',
-                description: <>Studied online marketing and personal branding.</>,
+                name: 'China University of Petroleum (East China)',
+                description: (
+                    <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', marginTop: '12px', }}>
+
+                        <div style={{ flexShrink: 0, width: '90px', display: 'flex', justifyContent: 'center' }}>
+                            <img
+                                src="/images/upc.svg"
+                                alt="UPC Logo"
+                                style={{ width: '100%', height: 'auto', display: 'block' }}
+                            />
+                        </div>
+
+                        <div style={{ flex: 1 }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                                <p style={{ fontWeight: '600', margin: '0', fontSize: '1.1rem', color: 'var(--neutral-on-background-strong)' }}>
+                                    Bachelor of Science in Geographic Information Science
+                                </p>
+                                <span style={{ fontSize: '1rem', color: 'var(--neutral-on-background-medium)', whiteSpace: 'nowrap', marginLeft: '16px' }}>
+                                    2020 - 2024
+                                </span>
+                            </div>
+                            
+                            <p style={{ margin: '0 16px 16px 0', fontSize: '1rem', opacity: 0.9, lineHeight: '1.5', }}>
+                                Built a strong foundation in spatial analysis, remote sensing, and geocomputation. Graduated with the honor of <strong>University-Level Outstanding Graduate</strong>.
+                            </p>
+                        </div>
+                    </div>
+                ),
             }
         ]
     },
@@ -180,73 +257,73 @@ const gallery = {
     description: `A photo collection by ${person.name}`,
     // Images from https://pexels.com
     images: [
-        { 
-            src: '/images/gallery/img-01.jpg', 
+        {
+            src: '/images/gallery/img-01.jpg',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/img-02.jpg', 
+        {
+            src: '/images/gallery/img-02.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/img-03.jpg', 
+        {
+            src: '/images/gallery/img-03.jpg',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/img-04.jpg', 
+        {
+            src: '/images/gallery/img-04.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/img-05.jpg', 
+        {
+            src: '/images/gallery/img-05.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/img-06.jpg', 
+        {
+            src: '/images/gallery/img-06.jpg',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/img-07.jpg', 
+        {
+            src: '/images/gallery/img-07.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/img-08.jpg', 
+        {
+            src: '/images/gallery/img-08.jpg',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/img-09.jpg', 
+        {
+            src: '/images/gallery/img-09.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/img-10.jpg', 
+        {
+            src: '/images/gallery/img-10.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/img-11.jpg', 
+        {
+            src: '/images/gallery/img-11.jpg',
             alt: 'image',
             orientation: 'vertical'
         },
-        { 
-            src: '/images/gallery/img-12.jpg', 
+        {
+            src: '/images/gallery/img-12.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/img-13.jpg', 
+        {
+            src: '/images/gallery/img-13.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },
-        { 
-            src: '/images/gallery/img-14.jpg', 
+        {
+            src: '/images/gallery/img-14.jpg',
             alt: 'image',
             orientation: 'horizontal'
         },

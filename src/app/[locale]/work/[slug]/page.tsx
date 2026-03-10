@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/mdx'
 import { getPosts } from '@/app/utils/utils'
-import { AvatarGroup, Button, Flex, Heading, SmartImage, Text } from '@/once-ui/components'
+import { AvatarGroup, Button, Flex, Heading, SmartImage, Text, Tag } from '@/once-ui/components'
 import { baseURL, renderContent } from '@/app/resources';
 import { routing } from '@/i18n/routing';
 import { unstable_setRequestLocale } from 'next-intl/server';
@@ -122,21 +122,29 @@ export default function Project({ params }: WorkParams) {
 				}}
 			/>
 			<Flex
-				fillWidth maxWidth="xs" gap="16"
+				fillWidth maxWidth="m" gap="16"
 				direction="column">
 				<Button
 					href={`/${params.locale}/work`}
 					variant="tertiary"
-					size="s"
+					size="m"
 					prefixIcon="chevronLeft">
-					Projects
+					{params.locale === 'zh' ? '返回项目' : 'Projects'}
 				</Button>
+				
 				<Heading
-					variant="display-strong-s">
+					variant="display-strong-m">
 					{post.metadata.title}
 				</Heading>
+				{post.metadata.tag && (
+                    <Flex>
+                        <Tag variant="neutral" size="l">
+                            {t(`tags.${post.metadata.tag}`)}
+                        </Tag>
+                    </Flex>
+                )}
 			</Flex>
-			{post.metadata.images.length > 0 && (
+			{post.metadata.images.length > 0 && !(post.metadata as any).hideHeaderImage && (
 				<SmartImage
 					aspectRatio="16 / 9"
 					radius="m"
@@ -145,7 +153,7 @@ export default function Project({ params }: WorkParams) {
 			)}
 			<Flex style={{margin: 'auto'}}
 				as="article"
-				maxWidth="xs" fillWidth
+				maxWidth="m" fillWidth
 				direction="column">
 				<Flex
 					gap="12" marginBottom="24"
@@ -157,7 +165,7 @@ export default function Project({ params }: WorkParams) {
 							size="m"/>
 					)}
 					<Text
-						variant="body-default-s"
+						variant="body-default-m"
 						onBackground="neutral-weak">
 						{formatDate(post.metadata.publishedAt)}
 					</Text>
