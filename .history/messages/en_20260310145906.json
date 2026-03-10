@@ -1,0 +1,69 @@
+{
+    "locale": "en",
+    "Header": {
+        "home": "Home",
+        "about": "About",
+        "work": "Projects",
+        "blog": "Blog",
+        "gallery": "Gallery"
+    },
+    "person": {
+        "role": "Design Engineer"
+    },
+    "newsletter": {
+        "title": "Subscribe to {firstName}'s Newsletter",
+        "description": "I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering",
+        "button": "Sign up"
+    },
+    "home": {
+        "label": "Home",
+        "title": "{name}'s Portfolio",
+        "description": "Portfolio website showcasing my work as a {role}",},
+    "about": {
+        "label": "About",
+        "title": "About me",
+        "description": "Meet {name}, {role} from {location}",
+        "intro": {
+            "title": "Introduction",
+        },
+        "work": {
+            "title": "Work Experience",
+        },
+        "studies": {
+            "title": "Studies",
+        },
+        "technical": {
+            "title": "Technical skills",
+        }
+    },
+    "blog": {
+        "label": "Blog",
+        "title": "Writing about design and tech...",
+        "description": "Read what {name} has been up to recently"
+    },
+    "work": {
+        "label": "Work",
+        "title": "My projects",
+        "description": "Design and dev projects by {name}"
+    },
+    "gallery": {
+        "label": "Gallery",
+        "title": "My photo gallery",
+        "description": "A photo collection by {name}"
+    },
+    "projectCard": {
+        "label": "Know more",
+        "link": "Project Link"
+    },
+    "tags": {
+        "map-visualization": "Map Visualization",
+        "web-dev": "Web Development",
+        "app-dev": "App Development",
+        "data-analysis": "Data Analysis",
+        "algorithm": "Algorithm",
+        "ui-ux": "UI/UX Design",
+        "gis": "GIS"
+    },
+    "Europe/Berlin": "Europe/Berlin",
+    "Asia/Shanghai": "Asia/Shanghai"
+}
