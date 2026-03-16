@@ -1,0 +1,209 @@
+---
+title: "Building a Website from Scratch : Enhanced Guide"
+publishedAt: "2025-12-31"
+summary: "From Docker, Next.js, Java Spring Boot to an interactive web application - Draw-it
+images:
+  - "/images/projects/scratch-2/image0.png"
+team:
+  - name: "Tai Tuan Le"
+    role: "Software Engineer | Web Developer | Full Stack Developer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/tailt0/"
+---
+## Introduction
+First, let me introduce myself. I am Tai Tuan Le, a Web Developer from Vietnam. As I write this post, I am studying in Adelaide, Australia. I specialize in web development. <br />
+So, in today's post, I wrote a guide about building a website from scratch. It will look at what you need to do to go from having some HTML files to having a live website that people can access. 
+
+## Overview
+
+Some days ago, a friend asked me: "I am researching how to build a website, but I don't know where to start. I already have the code, but I don't know what to do next, what to buy. Is it expensive? Is it hard? Please help me."<br />
+Since I have done this successfully before, I decided to write this guide. Currently, there are many guides online, but these guides provide some steps. So, I made this guide, It's not new but a new approach that priorities cost, scalability and also security. If you are reading this, please like and refresh the page to give me some traffic :D
+<br />
+**Our Goal** is to build a website from some HTML files is cheap, efficient, and easy.
+<br />
+**Who is this for?**
+I wrote this post for people who know how to program and have basic knowledge of websites, servers, domains, etc. This tutorial will skip some steps in detail.
+<br />
+If you have any question, don't hesitate to email me, send me message via Linkedin.
+
+Let's start!!!!
+## What You Need (Ingredients)
+- Domain.
+- VPS (Virtual Private Server).
+- Source Code.
+
+**1. Domain** About $16/year.
+I use a domain from the provider PAVietNam. However, you can buy one from any provider like GoDaddy, HostGator, CrazyDomains, etc.
+Once you buy a domain, it is unique worldwide. This is the address people will type into their browser to find website. The price will depend on the domain extension (like .com, .org, .net,...).
+You might think about getting a free domain, but I won't discuss that here. I recommend buying a proper domain for yourself! :D
+
+**2. VPS (Virtual Private Server)** About $15/year.
+For $15/year, you can get a VPS with 2TB bandwidth and 20GB storage if you buy from GreenCloudVPS.<br />
+However, I needed more storage for further projects in the future, so I chose a provider called HyperCore VN. It offers a discount that unlimited bandwidth and 40GB storage for about $35/year.<br />
+Some of you might ask: "Why not use AWS or Azure? They have 'pay as you go' options and can be very cheap."
+Well, first, signing up requires some initial cost, and they are quite complex to use. People even study for special certificates just to use AWS and Azure!<br />
+Also, these providers should be use for business project, big project. In my opinion, if you rely too much on one big provider, they decide if your system is strong or weak, not you. And after a long time, you can forgot how to build a website when these providers are not available.
+
+So remember out goal at the beginning : **FREE and EASY**
+
+In total, you will need **about $31 for the initial cost**. With this cost, you have full control to develop your own applications in 1 year.
+
+<br />
+There are three ingredients we got: 
+![3 parts](/images/projects/scratch-1-html/3-parts.png "3 parts")
+
+## Steps
+### Part 1: DNS
+By default, when you register a domain from any provider, they give you their own DNS service. This DNS acts as a bridge between your domain and your VPS. However, logging into your domain provider's website too often can be risky. You might accidentally reveal your password, or your account could be hacked or your dommain could be transferred to another place without your permission. Therefore, I recommend using a third-party DNS.
+<br />Many people suggest using CloudFlare, which is one of the biggest DNS providers right now. However, in 2025, 2 outages have appeared on [November 18, 2025](https://blog.cloudflare.com/18-november-2025-outage/) and [December 5, 2025](https://blog.cloudflare.com/5-december-2025-outage/)? I've lost faith in CloudFlare.
+<br />Instead, choose an other provider. They are strong enough, simple but give me more control. Personally, I have chosen [dns.he.net](https://dns.he.net/) since 2010.
+
+#### Step 1: Register account dns.he.net
+Register for an account at [https://dns.he.net](https://dns.he.net/).
+
+#### Step 2: Add nameserver
+Go to the domain management page on your provider's website (where you bought the domain). Change these 5 addresses from he.net:
+- ns1.he.net
+- ns2.he.net
+- ns3.he.net
+- ns4.he.net
+- ns5.he.net
+
+#### Step 3: Add records in dns.he.net
+Add a new domain (Click "Add a new zone"). After you add a new domain, the screens will look like this:
+![dns 1](/images/projects/scratch-1-html/dns.he.net-1.png "dns 1")
+![dns 2](/images/projects/scratch-1-html/dns.he.net-2.png "dns 2")
+
+You need to add a Type A record. Point this record to the IP address of the VPS you just bought.
+<br />If you want people to access your website using `www.` , you also need to add a CNAME record. This is optional, so you do not have to do it if you don't want to.
+<br />The result will look like this:
+![dns 3](/images/projects/scratch-1-html/dns.he.net-3.png "dns 3")
+
+After all, your domain is now successfully linked to your VPS.
+![3 parts-2](/images/projects/scratch-1-html/3-parts-2.png "3 parts-2")
+
+### Part 2: Preparing the VPS
+#### Step 1: Install Docker
+What we specifically need to install is Docker Compose.
+You can follow the official tutorial here: [https://docs.docker.com/compose/install/linux/](https://docs.docker.com/compose/install/linux/)
+
+#### Step 2: Create a Docker Network
+Run this command: `docker network create -d bridge my-bridge-network `
+
+**Why do we do this?** 
+Creating a custom network ensures that your containers can talk to each other internally. This keeps the connection safe and does not expose unwanted ports to the outside world (outside the VPS).
+
+**P.S.:** Please remember this network name (`my-bridge-network`).
+**Note:** You should create a separate Linux user for each project. Avoid using the root user for all your projects on the VPS. <br />
+However, for this guide, I will assume you have already successfully knew how to creat new users for your projects.
+
+#### Step 3: Install Git and Setup SSH
+If you have multiple users on your VPS, you should need to create different SSH keys for each one.
+Access the VPS, your VPS should be running Linux. Then, follow these steps:
+
+- Install Git: `sudo apt-get install git`
+- Create an SSH key: Run this command (replace with your actual email): `ssh-keygen -t ed25519 -C "email_github@email.com"`
+- Start the ssh-agent: `eval "$(ssh-agent -s)"`
+- Add your private SSH key: `ssh-add ~/.ssh/id_ed25519`
+- Get the public key: Run this command to see your key: `cat ~/.ssh/id_ed25519.pub` <br />
+Copy the key that appears and add it to your GitHub account here: [https://github.com/settings/keys](https://github.com/settings/keys)
+- Create the file: `touch ~/.ssh/authorized_keys`
+- Open the file using Nano and paste the public key inside: `nano ~/.ssh/authorized_keys`
+- Restart the VPS SSH service: `sudo systemctl restart ssh`
+- Check the connection to GitHub: Test if it works by running: `ssh -T git@github.com` <br />
+Or, try port 443: `ssh -T git@ssh.github.com -p 443`
+
+<br />
+Refer tutorial :
+[https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+[https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+
+#### Step 4: Create a Folder for Your Code
+Run this command to create a directory: `sudo mkdir -p /tmp/your-folder`
+
+**P.S.:** Please remember this folder path `/tmp/your-folder`.
+
+### Part 2 : Nginx web server
+Source code : [https://github.com/astropop/my-nginx](https://github.com/astropop/my-nginx)
+
+Specifically, there are two repos using inside: [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy) and [acme-companion](https://github.com/nginx-proxy/acme-companion)
+
+Using **nginx-proxy** combined with **nginx-proxy/acme-companion** is a great combo. It is a reverse proxy and automatically renews SSL for your domain. Best of all, it is completely FREE.
+
+This is the diagram to understand easier.
+
+![3 parts-3](/images/projects/scratch-1-html/3-parts-3.png "3 parts-3")
+
+#### Step 1: Configure GitHub Actions
+Edit the content of the file: deploy-docker-compose.yml [https://github.com/astropop/my-nginx/blob/main/.github/workflows/deploy-docker-compose.yml](https://github.com/astropop/my-nginx/blob/main/.github/workflows/deploy-docker-compose.yml)
+
+```
+on:
+  push:
+    branches:
+      - feature/final
+```      
+
+You need to set up these variables (Secrets):
+- ONLINE_HOST: The IP address of your VPS.
+- ONLINE_USERNAME: The username of your VPS.
+- ONLINE_SSH_PRIVATE_KEY: The SSH private key generated from your VPS. <br />
+How to get it: Run this command on your VPS: `cat ~/.ssh/id_ed25519`
+- ONLINE_PATH_PROJECT: The folder where the code will be pulled on the VPS. <br />
+Value: As mentioned before, this should be `/tmp/your-folder`
+
+How to add Secrets:<br />
+Go to your project Settings.<br />
+Go to Secrets and variables -> Actions.<br />
+Click on New repository secret.
+
+The settings are at this URL: [https://github.com/astropop/my-nginx/settings/secrets/actions](https://github.com/astropop/my-nginx/settings/secrets/actions) . Change `astropop/my-nginx` to your repository.
+
+When you push code to the `feature/final` branch, the github will automatically run CI/CD and redeploy the project into VPS.
+
+#### Step 2: Edit the Docker Compose File
+Edit the content of the file: docker-compose.yml [https://github.com/astropop/my-nginx/blob/main/docker-compose.yml](https://github.com/astropop/my-nginx/blob/main/docker-compose.yml)
+
+1. Update the Network Name: Change the network name `my_tailt_shared_net` to `my-bridge-network` (the one created earlier in Step 1 Part 2 - [Link](/work/make-a-website-from-scratch-html-files#step-2-create-a-docker-network)). 
+2. Check the Ports: Look at Line 6 and Line 7. 80 and 443, there are two ports that will be exposed to the public. People can only access your website via your domain through these ports.
+
+### Part 3: Source code
+Source code: [https://github.com/astropop/my-homepage](https://github.com/astropop/my-homepage)
+We will handle this part just like we did in Part 2 with the nginx-proxy.
+This source code contains some basic HTML pages. However, we need another Nginx to host this code on the VPS.
+
+#### Step 1: Configure GitHub Actions of your project
+Edit the content of the file: deploy-docker-compose.yml [https://github.com/astropop/my-homepage/blob/main/.github/workflows/deploy-docker-compose.yml](https://github.com/astropop/my-homepage/blob/main/.github/workflows/deploy-docker-compose.yml)
+Just like Step 1 in Part 2 - [Link](/work/make-a-website-from-scratch-html-files#step-1-configure-github-actions)
+
+#### Step 2: Edit the Docker Compose File of your project
+Edit the content of the file: docker-compose.yml [https://github.com/astropop/my-homepage/blob/main/docker-compose.yml](https://github.com/astropop/my-homepage/blob/main/docker-compose.yml)
+Just like step 2 in Part 2 - [Link](/work/make-a-website-from-scratch-html-files#step-2-edit-the-docker-compose-file)
+More modifications:
+- Line 3 (Image): `nginx:alpine` This is the web server used to host the source code. This image is very light, taking up only about 80MB.
+- VIRTUAL_HOST: Enter your domain here (e.g., newdomain.com).
+- VIRTUAL_PORT: This is the port that links this project to the nginx-proxy (e.g., `1993`).
+- LETSENCRYPT_HOST: This must match the domain you entered in VIRTUAL_HOST.
+- LETSENCRYPT_EMAIL: Change this to your email address.
+- Network Name: Change `my_tailt_shared_net` to your `my-bridge-network`.
+<br />
+The system for these projects will follow this model:
+![3 parts-4](/images/projects/scratch-1-html/3-parts-4.png "3 parts-4")
+
+### Final Part: Publish your website
+Every time you commit and push code to the `feature/final` branch, the code will be automatically run the workflow then rebuilt and deployed to your VPS.
+And here is the result:
+![3 parts-5](/images/projects/scratch-1-html/3-parts-5.png "3 parts-5")
+And the website from the source code mentioned above
+[https://vnpsc.com/](https://vnpsc.com/)
+
+## What's Next?
+I will create a new guidance that using a MySQL database, some backends such as PHP, Java,...
+Hope this article can help anyone who is insterested in building a website from scratch. 
+
+## Technologies Used
+- **HTML, CSS**.
+- **Github Workflow**: Automatically test, build, deploy to VPS.
+- **Docker**: For acceleration, better CI/CD support, easier to change and move.
+- **Nginx**: Acts as a webserver, helping reverse proxy to navigate apps on the server.
+- **VPS (Virtual Private Server)**: Acts as a storage, storing everything and keeping evertything always online.
