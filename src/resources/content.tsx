@@ -2,19 +2,20 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Celio",
+  lastName: "Cole",
+  name: `Celio Cole`,
+  role: "Product Designer (UX/UI) + Creative Developer · Next.js · Three.js · GSAP",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "celioocole@gmail.com",
+  location: "Europe/Madrid", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Spanish", "English", "Catala"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>
+    to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
 
@@ -25,27 +26,26 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/CECole",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/celio-esteban-zamudio-cole-45b502124/",
     essential: true,
   },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
-  },
+  /* { {
+     name: "Instagram",
+     icon: "instagram",
+     link: "https://www.instagram.com/once_ui/",
+     essential: false,
+   },
+     name: "Threads",
+     icon: "threads",
+     link: "https://www.threads.com/@once_ui",
+     essential: true,
+   },*/
   {
     name: "Email",
     icon: "email",
@@ -76,7 +76,7 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    I'm Celio, a Product Designer (UX/UI) + Creative Developer  at <Text as="span" size="xl" weight="strong">celiocole.com</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
 </>
   ),
 };
@@ -102,8 +102,8 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
+        Celio is a Barcelona-based Product Designer + Creative Developer  with a passion for transforming complex challenges
+        into simple, elegant design solutions. His work spans digital interfaces, interactive
         experiences, and the convergence of design and technology.
       </>
     ),
@@ -113,17 +113,16 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Freelancer",
+        timeframe: "September 2025 – Present ",
+        role: "UI/UX & Front-End Designer | Freelance ",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            · End-to-end digital product design, from defining user flows to the final interface.
+            · Advanced prototyping in Figma + Tailwind to validate interaction and usability.
+            · Front-end development with Next.js, Three.js, and GSAP for interactive experiences.
+            · Creation of design systems and reusable components.
+            · Direct collaboration with clients and developers to ensure technical feasibility.
           </>,
         ],
         images: [
@@ -137,20 +136,119 @@ const about: About = {
         ],
       },
       {
-        company: "Creativ3",
+        company: "Latin Palace Barcelona",
         timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        role: "Creative Design / UI Designer ",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            · Redesign of conversion-focused landing pages.
+            · Improved visual hierarchy and navigation in digital environments.
+            · Design of campaigns and visual assets.
+            · Collaborated with marketing and development teams.
           </>,
         ],
         images: [],
+      },
+      {
+        company: "PROMAD",
+        timeframe: "November 2019 – August 2020",
+        role: "Product Designer (UX/UI)",
+        achievements: [
+          <>
+            · Redesigned the emergency management alert platform (C5).
+            · Streamlined workflows in high-pressure scenarios.
+            · Prioritized critical information to improve decision-making.
+            · Design based on user feedback and QA.
+          </>,
+
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "AsTecI S.A. de C.V.",
+        timeframe: "May 2019 – November 2019",
+        role: "Senior Front-End / UX UI Developer",
+        achievements: [
+          <>
+            · Experience in corporate and enterprise environments.
+            · Front-end development using Angular and Material Design.
+            · Design of user interfaces and reusable components.
+            · Worked on agile teams and large-scale projects.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "GLOBAL HITSS",
+        timeframe: "September 2025 – Present ",
+        role: "Front-End Developer / UX UI",
+        achievements: [
+          <>
+            · Design of fintech products (Santander, Actinver).
+            · Creation of financial simulators and complex forms.
+            · Development of interfaces using Angular + Material Design.
+            · Collaboration in agile teams.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Byronmuller",
+        timeframe: "June 2017 – October 2017",
+        role: "Front-End Developer",
+        achievements: [
+          <>
+            · Converting designs into front-end code.
+            · Developing responsive websites using HTML5, CSS3, Bootstrap, and jQuery.
+            · Basic implementation of animations and interactions.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Virket Group",
+        timeframe: "June 2015 – April 2016",
+        role: "Web Designer & Front-End Developer",
+        achievements: [
+          <>
+            · Web development and layout using HTML, CSS, JavaScript, and jQuery.
+            · Implementation of websites on WordPress and Shopify.
+            · Basic performance optimization and technical SEO.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
@@ -159,12 +257,12 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "University of Barcelona",
+        description: <>Certificate in Digital Marketing from the Interactive Advertising Bureau.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "System Training Centers - UCLES",
+        description: <>Graphic Design Technician, Graphic Design.</>,
       },
     ],
   },
@@ -175,12 +273,16 @@ const about: About = {
       {
         title: "Figma",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Able to prototype in Figma with Once UI, Tailwind CSS with unnatural speed.</>
         ),
         tags: [
           {
             name: "Figma",
             icon: "figma",
+          },
+          {
+            name: "Tailwind CSS",
+            icon: "tailwindcss",
           },
         ],
         // optional: leave the array empty if you don't want to display images
@@ -202,7 +304,69 @@ const about: About = {
       {
         title: "Next.js",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Building next gen apps with Next.js + Vite + Tailwind CSS.</>
+        ),
+        tags: [
+          {
+            name: "JavaScript",
+            icon: "javascript",
+          },
+          {
+            name: "Next.js",
+            icon: "nextjs",
+          },
+          {
+            name: "Tailwind CSS",
+            icon: "tailwaindcss",
+          },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Angular",
+        description: (
+            <>Building next gen apps with Angular or Material Design + Bootstrap + Three.js.</>
+        ),
+        tags: [
+          {
+            name: "Angular",
+            icon: "angular",
+          },
+          {
+            name: "Bootstrap",
+            icon: "bootstrap",
+          },
+          {
+            name: "Three.js",
+            icon: "threejs",
+          },
+          {
+            name: "SCSS",
+            icon: "scss",
+          },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Next.js",
+        description: (
+            <>Building next gen apps with Next.js + Once UI + Supabase.</>
         ),
         tags: [
           {
