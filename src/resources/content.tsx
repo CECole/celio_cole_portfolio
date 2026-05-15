@@ -60,15 +60,15 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Designing immersive web experiences, operational dashboards, and scalable digital products through UX, motion design, and front-end development.</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Product</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Case Studies
         </Text>
       </Row>
     ),
@@ -76,7 +76,7 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Celio, a Product Designer (UX/UI) + Creative Developer  at <Text as="span" size="xl" weight="strong">celiocole.com</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+     Senior Product Designer and Front-End Developer specialized in real-time dashboards, operational platforms, and immersive digital experiences using Angular, Next.js, Three.js and GSAP at <Text as="span" size="xl" weight="strong">celiocole.com</Text>
 </>
   ),
 };
@@ -129,7 +129,7 @@ const about: About = {
           // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "GSAP Project",
             width: 16,
             height: 9,
           },
@@ -137,7 +137,7 @@ const about: About = {
       },
       {
         company: "Latin Palace Barcelona",
-        timeframe: "2018 - 2022",
+        timeframe: "December 2023 – September 2025",
         role: "Creative Design / UI Designer ",
         achievements: [
           <>
@@ -148,6 +148,29 @@ const about: About = {
           </>,
         ],
         images: [],
+      },
+      {
+        company: "Aguila & Sol",
+        timeframe: "September 2020 – December 2023 ",
+        role: "Front-End Developer & UX/UI Designer",
+        achievements: [
+          <>
+            · Design of end-to-end digital experiences (UX + UI + validation).
+            · Definition of information architecture and complex workflows.
+            · Front-end implementation for functional prototypes in Angular with Bootstrap and Three.js.
+            · Iteration based on testing and user feedback.
+          </>,
+
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/dashboard-energy-.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
         company: "PROMAD",
@@ -165,7 +188,7 @@ const about: About = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/project-01/dashboard-c5.png",
             alt: "Once UI Project",
             width: 16,
             height: 9,
@@ -188,7 +211,7 @@ const about: About = {
       },
       {
         company: "GLOBAL HITSS",
-        timeframe: "September 2025 – Present ",
+        timeframe: "September 2018 – May 2019",
         role: "Front-End Developer / UX UI",
         achievements: [
           <>
@@ -273,7 +296,7 @@ const about: About = {
       {
         title: "Figma",
         description: (
-          <>Able to prototype in Figma with Once UI, Tailwind CSS with unnatural speed.</>
+          <>Able to prototype in Figma with Next.js, Tailwind CSS with unnatural speed.</>
         ),
         tags: [
           {
@@ -356,7 +379,7 @@ const about: About = {
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
+            src: "/images/projects/project-01/dashboard-energy-1.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
@@ -366,7 +389,7 @@ const about: About = {
       {
         title: "Next.js",
         description: (
-            <>Building next gen apps with Next.js + Once UI + Supabase.</>
+            <>Building next gen apps with Next.js + GSAP.</>
         ),
         tags: [
           {
@@ -378,8 +401,8 @@ const about: About = {
             icon: "nextjs",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "GSAP",
+            icon: "gsap",
           },
         ],
         // optional: leave the array empty if you don't want to display images
